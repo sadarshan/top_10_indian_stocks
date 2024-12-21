@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flow-based Web Scraper</title>
+  <style>
+    body {
+      width: 400px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .section {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .recording { background-color: #ff4444; color: white; }
+    #flowList { margin: 10px 0; width: 100%; padding: 5px; }
+    #status { margin-top: 10px; font-style: italic; }
+    .flow-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .loop-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    input[type="number"] {
+      width: 80px;
+      padding: 5px;
+    }
+    .error { color: #ff4444; }
+  </style>
+</head>
+<body>
+  <h2>Flow-based Web Scraper</h2>
+  
+  <div class="section">
+    <h3>Record Flow</h3>
+    <input type="text" id="flowName" placeholder="Flow name">
+    <button id="recordFlow">Start Recording</button>
+  </div>
+
+  <div class="section">
+    <h3>Saved Flows</h3>
+    <select id="flowList"></select>
+    <div class="flow-controls">
+      <button id="runFlow">Run Once</button>
+      <div class="loop-controls">
+        <input type="number" id="loopCount" min="1" value="1" placeholder="Loop count">
+        <button id="runLoopFlow">Run Loop</button>
+      </div>
+    </div>
+    <button id="deleteFlow">Delete Flow</button>
+  </div>
+
+  <div class="section">
+    <h3>Export</h3>
+    <button id="exportResults">Export Results</button>
+  </div>
+
+  <div id="status"></div>
+  
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
